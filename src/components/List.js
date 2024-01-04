@@ -1,4 +1,13 @@
-function List({ todoList, setTodoList }) {
+function List({ todoList, setTodoList, action }) {
+  const filteredList = todoList.filter((element) => {
+    if (action === "active") {
+      return !element.done;
+    } else if (action === "completed") {
+      return element.done;
+    } else {
+      return true; // "All" seçeneği için tüm öğeleri göster
+    }
+  });
   const handleToggle = (index) => {
     const updatedList = todoList.map((element, i) => {
       if (i === index) {
@@ -19,7 +28,7 @@ function List({ todoList, setTodoList }) {
 
   return (
     <ul className="todo-list">
-      {todoList.map((element, index) => {
+      {filteredList.map((element, index) => {
         return (
           <li className="view" key={element.text}>
             <div className="view">

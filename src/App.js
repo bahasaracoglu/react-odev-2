@@ -8,6 +8,7 @@ import initialData from "./initial-data.json";
 function App() {
   const [input, setInput] = useState("");
   const [todoList, setTodoList] = useState(initialData.todo);
+  const [action, setAction] = useState("all");
   console.log(todoList);
 
   console.log(input);
@@ -20,8 +21,18 @@ function App() {
           setTodoList={setTodoList}
           todoList={todoList}
         />
-        <Main input={input} todoList={todoList} setTodoList={setTodoList} />
-        <Footer />
+        <Main
+          input={input}
+          todoList={todoList}
+          setTodoList={setTodoList}
+          action={action}
+        />
+        <Footer
+          setAction={setAction}
+          action={action}
+          todoList={todoList}
+          setTodoList={setTodoList}
+        />
       </section>
       <Info />
     </div>
