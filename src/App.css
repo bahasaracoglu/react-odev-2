@@ -155,6 +155,11 @@ body {
   border-bottom: 1px solid #ededed;
 }
 
+.todo-done {
+  color: #e6e6e6;
+  text-decoration-line: line-through;
+}
+
 .todo-list li:last-child {
   border-bottom: none;
 }

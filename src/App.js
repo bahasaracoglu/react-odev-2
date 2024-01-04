@@ -20,7 +20,7 @@ function App() {
           setTodoList={setTodoList}
           todoList={todoList}
         />
-        <Main input={input} todoList={todoList} />
+        <Main input={input} todoList={todoList} setTodoList={setTodoList} />
         <Footer />
       </section>
       <Info />
